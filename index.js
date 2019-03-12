@@ -1,5 +1,3 @@
-var containers = document.querySelectorAll('.minutes-container');
-
 function initLocalClocks() {
   var date = new Date();
   var seconds = date.getSeconds();
@@ -33,6 +31,7 @@ function initLocalClocks() {
 }
 
 function setUpMinuteHands() {
+  var containers = document.querySelectorAll('.minutes-container');
   var secondAngle = containers[0].getAttribute("data-second-angle");
   if (secondAngle > 0) {
     var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
@@ -77,5 +76,4 @@ function moveSecondHands() {
 
 initLocalClocks();
 setUpMinuteHands();
-moveMinuteHands(containers);
 moveSecondHands();
